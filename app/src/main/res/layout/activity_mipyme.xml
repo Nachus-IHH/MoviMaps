@@ -1,0 +1,51 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".forms.MipymeActivity">
+
+    <Button
+        android:id="@+id/buttonBackMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_back"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_title_mipyme"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/form_container"
+        android:layout_marginTop="5dp"/>
+</LinearLayout>
+<!--
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tipo_giro"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    app:startIconDrawable="@drawable/baseline_all_24"
+    app:helperText="@string/helper"
+    app:boxStrokeColor="@color/black"
+    android:hint="@string/texto"
+    app:hintTextColor="@color/lavender"
+    android:layout_marginTop="32dp">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+</com.google.android.material.textfield.TextInputLayout>
+-->

@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">MoviMaps</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+    <string name="developer">MoviMaps</string>
+    <string name="desarrollo">Desarrollado por</string>
+    <string name="version">Version 1.0.0</string>
+    <string name="back_login_description">Imagen de fondo para la pantalla de inicio</string>
+
+    <!-- Login -->
+    <string name="titulo_login">Ingrese Secion</string>
+    <string name="lbl_usuario">Usuario</string>
+    <string name="txt_usuario">Ingrese Usuario</string>
+    <string name="lbl_password">Contraseña</string>
+    <string name="txt_password">Ingrese Contraseña</string>
+    <string name="lbtn_ingresar">Ingresar</string>
+    <string name="lbl_crear_cuenta">¿No tienes cuenta?, Registrate</string>
+
+    <!-- Registro -->
+    <string name="titulo_Registro">Registro</string>
+    <string name="txt_usuario1">Ingrese Usuario Nuevo</string>
+    <string name="rbl_usuario">Usuario Nuevo</string>
+    <string name="rtxt_usuario">Ingrese Correo</string>
+    <string name="rbl_password">Contraseña Nueva</string>
+    <string name="rtxt_password">Ingrese Contraseña Nueva</string>
+    <string name="rbl_password1">Confirmar Contraseña</string>
+    <string name="rtxt_password1">Confirme su Contraseña</string>
+    <string name="rbtn_acceder">Acceder</string>
+    <string name="lbl_inicia_secion">¿Ya tienes cuenta? Inicia sesión</string>
+
+    <!-- bottom_menu -->
+    <string name="bottom_menu_home">Inicio</string>
+    <string name="bottom_menu_events">Eventos</string>
+    <string name="bottom_menu_notifications">Notificaciones</string>
+    <string name="bottom_menu_settings">Config</string>
+    <!-- nav_menu -->
+    <string name="nav_menu_generate_route">Generar ruta</string>
+    <string name="nav_menu_fav_route">Rutas favoritas</string>
+    <string name="nav_menu_download_maps">Mapas descargados</string>
+    <string name="nav_menu_see_transport">Ver paradas por transporte</string>
+    <string name="nav_menu_rate_app">Valorar aplicación</string>
+    <string name="nav_menu_logout">Cerrar sesión</string>
+    <string name="nav_menu_contact_us">contact@movimaps.com</string>
+    <!-- Dialog Add -->
+    <string name="dialog_add_title">Agregar</string>
+    <string name="dialog_add_route">Ruta de transporte</string>
+    <string name="dialog_add_stop">Parada a una ruta</string>
+    <string name="dialog_add_event_stop">Evento a parada</string>
+    <string name="dialog_add_event">Evento local</string>
+    <string name="dialog_add_mipyme">MiPyMES</string>
+    <!-- Form -->
+    <string name="form_back">Regresar</string>
+    <string name="form_next">Siguiente</string>
+    <string name="form_register">Registrar</string>
+    <string name="form_field_optional">*Opcional</string>
+    <string name="form_description">Descripción</string>
+
+    <!-- Form Mipyme -->
+    <string name="form_title_mipyme">Registrar MiPyME</string>
+    <string name="form_mipyme_subtitle_general_info">Información General</string>
+    <string name="form_mipyme_company">Empresa</string>
+    <string name="form_mipyme_type_turn">Tipo de giro</string>
+    <string name="form_mipyme_load_logo">Subir logo</string>
+
+    <string name="form_mipyme_subtitle_direct_contact">Contacto Directo</string>
+    <string name="form_mipyme_contact_name">Nombre</string>
+    <string name="form_mipyme_contact_number">Numero Telefónico</string>
+    <string name="form_mipyme_contact_email">Correo Eletrónico</string>
+    <string name="form_mipyme_note_contact_direct">
+        Esta información es complementaria, puede dejar en blanco este formulario si asi lo desea.
+        Es necesaria si piensa contratar alguna suscripción.
+    </string>
+
+    <string name="form_mipyme_subtitle_address">Dirección</string>
+    <string name="form_mipyme_address_street">Calle</string>
+    <string name="form_mipyme_address_number">Numero</string>
+    <string name="form_mipyme_addres_code_postal">Código Postal</string>
+    <string name="form_map_see_location">Actualizar Mapa</string>
+    <string name="form_map_current_location">Ubicación actual</string>
+
+
+    <!-- Form Event -->
+    <string name="form_title_event">Registrar Evento Local</string>
+    <string name="form_event_name">Nombre del evento</string>
+    <string name="form_event_datetime_start">Fecha y Hora de inicio</string>
+    <string name="form_event_datetime_finish">Fecha y Hora de cierre</string>
+    <string name="form_event_cost">Coste</string>
+    <string name="form_event_category">Categoria</string>
+
+    <!-- Form Route -->
+    <string name="form_title_route">Registrar Ruta</string>
+
+    <!-- Form Stop -->
+    <string name="form_title_stop">Registrar Parada en Ruta</string>
+
+    <!-- Form Event at Stop -->
+    <string name="form_title_event_stop">Registrar Evento en Parada</string>
+
+    <string name="texto">Soy un texto</string>
+    <string name="helper">Texto de ayuda (required)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

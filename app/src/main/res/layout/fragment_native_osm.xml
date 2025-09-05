@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".osmmap.NativeOsmFragment">
+
+    <!--
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Controles de búsqueda y ubicación -->
+        <EditText
+            android:id="@+id/etSearchAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Buscar dirección (ej. Calle, Número, CP)"
+            android:inputType="textPostalAddress"
+            android:maxLines="1"
+            android:imeOptions="actionSearch"
+            android:drawableStart="@drawable/baseline_all_24"
+            android:drawablePadding="8dp"
+            android:padding="10dp"
+            android:background="@drawable/edit_text_border"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnShowAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mostrar Dirección"
+                android:textSize="12sp"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnCurrentLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mi Ubicación"
+                android:textSize="12sp"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnVisualizeRoute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Visualizar Ruta de Ejemplo"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Mapa -->
+        <org.osmdroid.views.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/icon_route"
+            android:title="@string/nav_menu_generate_route"/>
+
+        <item
+            android:id="@+id/nav_favorite"
+            android:icon="@drawable/icon_favorite"
+            android:title="@string/nav_menu_fav_route"/>
+
+        <item
+            android:id="@+id/nav_downloaded"
+            android:icon="@drawable/icon_map"
+            android:title="@string/nav_menu_download_maps"/>
+
+        <item
+            android:id="@+id/nav_see_transport"
+            android:icon="@drawable/baseline_all_24"
+            android:title="@string/nav_menu_see_transport"/>
+
+        <item
+            android:id="@+id/nav_transportation"
+            android:icon="@drawable/icon_star_rate"
+            android:title="@string/nav_menu_rate_app"/>
+    </group>
+    <item
+        android:title="">
+
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/icon_logout"
+                android:title="@string/nav_menu_logout"/>
+        </menu>
+
+    </item>
+
+</menu>

@@ -1,0 +1,5 @@
+// habilita/desabilita el uso de conexion de datos para descargar tiles
+setUseDataConnection(boolean enabled)
+
+// limpia la cache de tiles almacenadados
+getTileProvider().clearTileCache()

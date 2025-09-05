@@ -1,0 +1,46 @@
+[versions]
+# Versiones de las librerias
+agp = "8.12.0"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+material = "1.10.0"
+activity = "1.8.0"
+constraintlayout = "2.1.4"
+osmdroid = "6.1.20"
+androidx-core = "1.12.0"
+retrofit = "2.9.0"
+gson-converter = "2.9.0"
+okhttp-logging = "4.12.0"
+lombok = "1.18.32"
+room = "2.5.2"
+
+[libraries]
+# Librerias por defecto
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+# Dependencias de osmdroid
+osmdroid-core = { group = "org.osmdroid", name = "osmdroid-android", version.ref = "osmdroid" }
+osmdroid-wms = { group = "org.osmdroid", name = "osmdroid-wms", version.ref = "osmdroid" }
+osmdroid-mapsforge = { group = "org.osmdroid", name = "osmdroid-mapsforge", version.ref = "osmdroid" }
+# Dependencia de AndroidX Core
+androidx-core = { group = "androidx.core", name = "core", version.ref = "androidx-core" }
+# Dependencias de Retrofit y OkHttp
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "gson-converter" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp-logging" }
+# Dependencias de Lombok
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+# Dependencias de Room
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+

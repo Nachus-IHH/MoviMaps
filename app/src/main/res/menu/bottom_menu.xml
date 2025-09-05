@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:title="@string/bottom_menu_home"
+        android:icon="@drawable/icon_home"/>
+
+    <item
+        android:id="@+id/events"
+        android:title="@string/bottom_menu_events"
+        android:icon="@drawable/icon_calendar"
+        />
+
+    <item
+        android:title=""/>
+
+    <item
+        android:id="@+id/notifications"
+        android:title="@string/bottom_menu_notifications"
+        android:icon="@drawable/icon_notification" />
+    <item
+        android:id="@+id/settings"
+        android:title="@string/bottom_menu_settings"
+        android:icon="@drawable/icon_config" />
+
+</menu>
