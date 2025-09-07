@@ -1,12 +1,10 @@
 package com.example.movimaps.sql.entity;
-
-import static androidx.room.ForeignKey.CASCADE;
-
-import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ColumnInfo;
 import androidx.room.ForeignKey;
-import androidx.room.Index;
+
+import com.example.movimaps.sql.entity.Parada;
+import com.example.movimaps.sql.entity.Ruta;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,49 +13,40 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(
-        tableName = "Ruta_has_Parada",
-        primaryKeys = { "Ruta_id_ruta", "Parada_id_parada" },
+@Entity(tableName = "Ruta_has_Parada",
+        primaryKeys = {"Ruta_id_ruta", "Parada_id_parada"},
         foreignKeys = {
-                @ForeignKey(
-                        entity = Ruta.class,
-                        parentColumns = "id_ruta",
-                        childColumns = "Ruta_id_ruta",
-                        onDelete = CASCADE
-                ),
-                @ForeignKey(
-                        entity = Parada.class,
-                        parentColumns = "id_parada",
-                        childColumns = "Parada_id_parada",
-                        onDelete = CASCADE
-                )
-        },
-        indices = {
-                @Index(value = "Ruta_id_ruta"),
-                @Index(value = "Parada_id_parada")
+            @ForeignKey(
+                    entity = Ruta.class,
+                    parentColumns = "id_ruta",
+                    childColumns = "Ruta_id_ruta",
+                    onDelete = ForeignKey.CASCADE
+            ),
+            @ForeignKey(
+                    entity = Parada.class,
+                    parentColumns = "id_parada",
+                    childColumns = "Parada_id_parada",
+                    onDelete = ForeignKey.CASCADE
+            )
         }
 )
-public class RutaHasParada  {
+public class RutaHasParada {
     @ColumnInfo(name = "Ruta_id_ruta")
-    private int idRuta;
-
+    private int rutaIdRuta; // FK
     @ColumnInfo(name = "Parada_id_parada")
-    private int idParada;
-
+    private int paradaIdParada;
+    // FK
     @ColumnInfo(name = "no_validaciones")
     private int noValidaciones;
-
+    private String tipo; // ENUM como String
     @ColumnInfo(name = "tiempo_espera_aprox")
-    private String tiempoEsperaAprox;   // Time
-
-    @NonNull
-    private int orden;
-
+    private String tiempoEsperaAprox;
+    // TIME como String private int orden;
     @ColumnInfo(name = "tiempo_viaje_desde_anterior")
-    private String tiempoViajeDesdeAnterior;    // Time
-
+    private String tiempoViajeDesdeAnterior; // TIME como String
     @ColumnInfo(name = "distancia_km")
-    private float distanciaKm;
+    private double distanciaKm;
+    // DECIMAL(5,2)
+    // Constructor
 
-    private String estado;  // 'ACTIVA', 'INACTIVA'
 }
