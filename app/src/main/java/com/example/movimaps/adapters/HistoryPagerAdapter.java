@@ -1,12 +1,12 @@
-package com.example.movimaps.osmmap.adapters;
+package com.example.movimaps.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-import com.example.osmmap.fragments.RouteHistoryFragment;
-import com.example.osmmap.fragments.SearchHistoryFragment;
-import com.example.osmmap.fragments.LocationHistoryFragment;
+import com.example.movimaps.fragments.RouteHistoryFragment;
+import com.example.movimaps.fragments.SearchHistoryFragment;
+import com.example.movimaps.fragments.LocationHistoryFragment;
 public class HistoryPagerAdapter extends FragmentStateAdapter {
     private RouteHistoryFragment routeFragment;
     private SearchHistoryFragment searchFragment;

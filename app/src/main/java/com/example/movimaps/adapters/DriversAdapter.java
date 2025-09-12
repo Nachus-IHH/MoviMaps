@@ -1,4 +1,4 @@
-package com.example.movimaps.osmmap.adapters;
+package com.example.movimaps.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.osmmap.R;
-import com.example.osmmap.database.Driver;
+import com.example.movimaps.R;
+import com.example.movimaps.database.Driver;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;

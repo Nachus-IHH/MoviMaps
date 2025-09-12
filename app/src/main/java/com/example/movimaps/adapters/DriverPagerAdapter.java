@@ -1,4 +1,4 @@
-package com.example.movimaps.osmmap.adapters;
+package com.example.movimaps.adapters;
 
 // reponer las clases faltantes para que funcione
 import androidx.annotation.NonNull;
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.movimaps.fragments.DriversFragment.java;
-import com.example.osmmap.fragments.DriverRoutesFragment;
-import com.example.osmmap.fragments.BusStopsFragment;
+import com.example.movimaps.fragments.DriverRoutesFragment;
+import com.example.movimaps.fragments.BusStopsFragment;
 
 public class DriverPagerAdapter extends FragmentStateAdapter {
     // NUEVO: Adaptador para tabs de choferes

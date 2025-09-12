@@ -1,4 +1,4 @@
-package com.example.movimaps.osmmap.adapters;
+package com.example.movimaps.adapters;
 
 public class OptimizedRoutesAdapter extends RecyclerView.Adapter<OptimizedRoutesAdapter.RouteViewHolder> {
     private TabLayout tabLayout;

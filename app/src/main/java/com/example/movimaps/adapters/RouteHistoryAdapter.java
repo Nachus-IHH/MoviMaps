@@ -1,4 +1,4 @@
-package com.example.movimaps.osmmap.adapters;
+package com.example.movimaps.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
