@@ -3,3 +3,4 @@ setUseDataConnection(boolean enabled)
 
 // limpia la cache de tiles almacenadados
 getTileProvider().clearTileCache()
+dedwdwdwdewdw
