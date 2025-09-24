@@ -108,7 +108,7 @@ public class RouteHistoryAdapter extends RecyclerView.Adapter<RouteHistoryAdapte
 
             // Estado de favorito
             ivFavorite.setImageResource(route.isFavorite() ?
-                    R.drawable.ic_favorite_filled : R.drawable.ic_favorite_outline);
+                    R.drawable.icon_favorite : R.drawable.ic_favorite_outline);
         }
     }
 }

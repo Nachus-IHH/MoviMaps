@@ -76,7 +76,9 @@ public class MipymeActivity extends AppCompatActivity
 
     @Override
     public void onAddressSubmitted(Direccion direccion) {
-        currentMipyme.setDireccion(direccion);
+
+
+        currentMipyme.setdireccion(direccion);
         // Aqui se podria avanzar al siguiente paso o guardar todo
         // saveMipymeToDatabase
         Intent intent = new Intent(MipymeActivity.this, MainActivity.class);

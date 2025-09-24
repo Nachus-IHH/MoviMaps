@@ -17,6 +17,7 @@ import com.example.movimaps.pojo.EventoForm;
 import com.example.movimaps.fragments.AddressFormFragment;
 import com.example.movimaps.fragments.EventInfoFragment;
 
+
 public class EventActivity extends AppCompatActivity
         implements OnFormStepCompletedListener<EventoForm>{
 

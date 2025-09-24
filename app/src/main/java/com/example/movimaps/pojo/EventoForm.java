@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
+
+
 public class EventoForm {
     // Attributes
     private String nombre;
@@ -21,4 +23,12 @@ public class EventoForm {
     private String contacto;
     private Direccion direccion;
 
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+    public Direccion getDireccion() {
+        return direccion;
+    }
 }
+
+
