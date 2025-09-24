@@ -23,8 +23,8 @@ import com.example.movimaps.osmmap.api.ApiClient;
 import com.example.movimaps.osmmap.api.GeocodingResponse;
 import com.example.movimaps.sql.database.AppDatabase;
 import com.example.movimaps.sql.database.Parada;
-import com.example.movimaps.sql.database.Ruta;
 import com.example.movimaps.sql.dao.TransportDao;
+import com.example.movimaps.sql.entity.Ruta;
 import com.example.movimaps.utils.HistoryManager;
 
 import org.osmdroid.api.IGeoPoint;
