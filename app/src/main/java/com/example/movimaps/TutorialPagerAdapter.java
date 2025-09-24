@@ -42,7 +42,7 @@ public class TutorialPagerAdapter extends FragmentStateAdapter {
                         R.drawable.ic_explore
                 );
             default:
-                return TutorialFragment.newInstance("", "", R.drawable.ic_welcome);
+                return TutorialFragment.newInstance("", "", R.drawable.icon_home);
         }
     }
 
