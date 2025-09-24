@@ -75,7 +75,7 @@ public class NativeOSMFragment extends Fragment {
         Configuration.getInstance().load(context, context.getSharedPreferences("osm_prefs", Context.MODE_PRIVATE));
 
         // Inicializar BD e historial
-        database = AppDatabase.getDatabase(context);
+        database = AppDatabase.getInstance(context);
         transportDao = database.transportDao();
         historyManager = new HistoryManager(context);
 
@@ -144,7 +144,7 @@ public class NativeOSMFragment extends Fragment {
         mapController.animateTo(point);
     }
 
-    public void addMarker(GeoPoint latitude, String longitude, String title, int description) {
+    public void addMarker(double latitude, double longitude, String title, String description) {
         Marker marker = new Marker(mapView);
         marker.setPosition(new GeoPoint(latitude, longitude));
         marker.setTitle(title);
@@ -192,18 +192,20 @@ public class NativeOSMFragment extends Fragment {
     }
 
     public void displayAddressOnMap(String query) {
-        ApiClient.getApiService().search(query, "json").enqueue(new Callback<List<GeocodingResponse>>() {
+        ApiClient.getMapApiService().search(query, "json").enqueue(new Callback<List<GeocodingResponse>>() {
             @Override
             public void onResponse(Call<List<GeocodingResponse>> call, Response<List<GeocodingResponse>> response) {
                 if (response.isSuccessful() && response.body() != null && !response.body().isEmpty()) {
                     GeocodingResponse result = response.body().get(0);
-                    double lat = Double.parseDouble(result.getLat());
-                    double lon = Double.parseDouble(result.getLon());
-                    addMarker(lat, lon, "Dirección", query);
+                    double lat = Double.parseDouble(result.getLatitude());
+                    double lon = Double.parseDouble(result.getLongitude());
+                    // Asegúrate de usar el nombre correcto en GeocodingResponse
+                    addMarker(lat, lon, "Dirección", result.getDisplayName());
                     centerMapOnLocation(lat, lon);
 
                     // Guardar en historial
-                    historyManager.addToHistory(query);
+                    historyManager.saveSearch(query, result.getDisplayName(), lat, lon, "geocoding");
+                    // Nota: Tu HistoryManager usa 'lat' y 'lon' como double, lo cual es correcto.
                 }
             }
 
@@ -218,13 +220,13 @@ public class NativeOSMFragment extends Fragment {
         new Thread(() -> {
             Ruta ruta = transportDao.getRutaById(1);
             if (ruta != null) {
-                List<Parada> paradas = transportDao.getParadasByRutaId(ruta.getId());
+                List<Parada> paradas = transportDao.getParadasByRuta(ruta.getIdRuta());
                 requireActivity().runOnUiThread(() -> {
                     clearMapOverlays();
                     ArrayList<OverlayItem> overlayItems = new ArrayList<>();
                     for (Parada parada : paradas) {
-                        GeoPoint point = new GeoPoint(parada.getLatitud(), parada.getLongitud());
-                        overlayItems.add(new OverlayItem(parada.getNombre(), "Parada en " + parada.getNombre(), point));
+                        GeoPoint point = new GeoPoint(parada.getLat(), parada.getLng());
+                        overlayItems.add(new OverlayItem(parada.getIdParada()+"", "Parada en " + parada.getNombreParada(), point));
                     }
                     ItemizedOverlayWithFocus<OverlayItem> overlay = new ItemizedOverlayWithFocus<>(overlayItems, new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
                         @Override

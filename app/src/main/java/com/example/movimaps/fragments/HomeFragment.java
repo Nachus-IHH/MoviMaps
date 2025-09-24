@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
         if (mapFragment != null) {
             GeoPoint myLocation = new GeoPoint(20.09771615, -98.7687703643131 );
             mapFragment.centerMapOnLocation(myLocation);
-            mapFragment.addMarker(myLocation, "", "", 0);
+            mapFragment.addMarker(0, 0, "", "description");
         }
     }
 }
