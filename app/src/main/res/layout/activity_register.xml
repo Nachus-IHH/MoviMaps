@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Nombre de usuario"
                 android:inputType="text"
-                android:drawableStart="@drawable/ic_account"
+                android:drawableStart="@drawable/ic_person"
                 android:drawablePadding="12dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
