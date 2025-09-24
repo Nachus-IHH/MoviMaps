@@ -1,5 +1,6 @@
 package com.example.movimaps.sql.dao;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -7,7 +8,7 @@ import androidx.room.Update;
 
 import com.example.movimaps.sql.database.BusStop;
 import com.example.movimaps.sql.database.RouteHistory;
-
+@Dao
 public interface RouteHistoryDao {
     @Insert
     long insertar(RouteHistory routeHistory);     // Devuelve el id de insercion

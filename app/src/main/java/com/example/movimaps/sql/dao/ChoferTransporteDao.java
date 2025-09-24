@@ -1,5 +1,6 @@
 package com.example.movimaps.sql.dao;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -8,6 +9,7 @@ import androidx.room.Update;
 import com.example.movimaps.sql.database.ChoferTransporte;
 import com.example.movimaps.sql.entity.Direccion;
 
+@Dao
 public interface ChoferTransporteDao {
     @Insert
     long insertar(ChoferTransporte choferTransporte);     // Devuelve el id de insercion

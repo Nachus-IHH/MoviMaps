@@ -1,5 +1,6 @@
 package com.example.movimaps.sql.dao;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -7,7 +8,7 @@ import androidx.room.Update;
 
 import com.example.movimaps.sql.database.BusStop;
 import com.example.movimaps.sql.database.DriverRoute;
-
+@Dao
 public interface BusStopDao {
     @Insert
     long insertar(BusStop busStop);     // Devuelve el id de insercion
