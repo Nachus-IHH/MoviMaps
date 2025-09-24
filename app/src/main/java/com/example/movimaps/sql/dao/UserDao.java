@@ -1,10 +1,13 @@
-package com.example.movimaps.sql.database;  // Usa solo este paquete
+package com.example.movimaps.sql.dao;  // Usa solo este paquete
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.movimaps.sql.database.User;
+
 import java.util.List;
 
 @Dao

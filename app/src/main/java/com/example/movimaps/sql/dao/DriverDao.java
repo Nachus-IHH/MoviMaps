@@ -1,10 +1,15 @@
-package com.example.movimaps.sql.database;
+package com.example.movimaps.sql.dao;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.movimaps.sql.database.BusStop;
+import com.example.movimaps.sql.database.Driver;
+import com.example.movimaps.sql.database.DriverRoute;
+
 import java.util.List;
 
 @Dao

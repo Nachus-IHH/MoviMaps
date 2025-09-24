@@ -4,7 +4,6 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,7 +24,7 @@ import com.example.movimaps.osmmap.api.GeocodingResponse;
 import com.example.movimaps.sql.database.AppDatabase;
 import com.example.movimaps.sql.database.Parada;
 import com.example.movimaps.sql.database.Ruta;
-import com.example.movimaps.sql.database.TransportDao;
+import com.example.movimaps.sql.dao.TransportDao;
 import com.example.movimaps.utils.HistoryManager;
 
 import org.osmdroid.api.IGeoPoint;
@@ -90,7 +89,7 @@ public class NativeOSMFragment extends Fragment {
         });
 
         // Configuración del mapa
-        mapView = view.findViewById(R.id.mapview);
+        mapView = view.findViewById(R.id.mapView);
         mapView.setTileSource(TileSourceFactory.MAPNIK);
         mapView.setMultiTouchControls(true);
         mapController = (MapController) mapView.getController();
@@ -145,7 +144,7 @@ public class NativeOSMFragment extends Fragment {
         mapController.animateTo(point);
     }
 
-    public void addMarker(double latitude, double longitude, String title, String description) {
+    public void addMarker(GeoPoint latitude, String longitude, String title, int description) {
         Marker marker = new Marker(mapView);
         marker.setPosition(new GeoPoint(latitude, longitude));
         marker.setTitle(title);
@@ -244,5 +243,8 @@ public class NativeOSMFragment extends Fragment {
                 });
             }
         }).start();
+    }
+
+    public void centerMapOnLocation(GeoPoint myLocation) {
     }
 }

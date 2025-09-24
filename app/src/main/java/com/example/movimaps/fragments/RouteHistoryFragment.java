@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.movimaps.MainActivity;
 import com.example.movimaps.R;
 import com.example.movimaps.adapters.RouteHistoryAdapter;
-import com.example.movimaps.sql.database.RouteHistory;
+import com.example.movimaps.sql.entity.RouteHistory;
 import com.example.movimaps.utils.HistoryManager;
 import java.util.List;
 
