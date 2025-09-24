@@ -1,6 +1,6 @@
 [versions]
 # Versiones de las librerias
-agp = "8.12.0"
+agp = "8.12.3"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
