@@ -11,37 +11,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header con imagen de perfil -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/profile_header_background">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/ivProfileImage"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/ic_default_avatar"
-                app:civ_border_width="4dp"
-                app:civ_border_color="@android:color/white" />
-
             <ImageView
                 android:id="@+id/ivEditPhoto"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:layout_alignEnd="@id/ivProfileImage"
-                android:layout_alignBottom="@id/ivProfileImage"
+                android:layout_alignEnd="@+id/ivProfileImage"
+                android:layout_alignBottom="@+id/ivProfileImage"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/circle_background"
                 android:src="@drawable/ic_camera"
                 android:padding="8dp"
-                android:contentDescription="Editar foto" />
+                android:contentDescription="Edit photo" />
 
-        </RelativeLayout>
 
-        <!-- Formulario de perfil -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,7 +40,6 @@
                 android:textColor="@color/primary_color"
                 android:layout_marginBottom="16dp" />
 
-            <!-- Nombre completo -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,7 +57,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Usuario -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -88,12 +69,11 @@
                     android:layout_height="wrap_content"
                     android:hint="Nombre de usuario"
                     android:inputType="text"
-                    android:drawableStart="@drawable/ic_account"
+                    android:drawableStart="@drawable/ic_email"
                     android:drawablePadding="12dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Email -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -111,7 +91,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Teléfono -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -129,7 +108,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Biografía -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,7 +127,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Botones -->
             <Button
                 android:id="@+id/btnSaveProfile"
                 android:layout_width="match_parent"

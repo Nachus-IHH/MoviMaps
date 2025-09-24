@@ -89,7 +89,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="¿A dónde vas?"
-                            android:drawableStart="@drawable/ic_destination"
+                            android:drawableStart="@drawable/ic_location_red"
                             android:drawablePadding="12dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
