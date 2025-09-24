@@ -1,10 +1,10 @@
 package com.example.movimaps.utils;
 
 import android.content.Context;
-import com.example.movimaps.database.AppDatabase;
-import com.example.movimaps.database.RouteHistory;
-import com.example.movimaps.database.SearchHistory;
-import com.example.movimaps.database.LocationHistory;
+import com.example.movimaps.sql.database.AppDatabase;
+import com.example.movimaps.sql.database.RouteHistory;
+import com.example.movimaps.sql.database.SearchHistory;
+import com.example.movimaps.sql.database.LocationHistory;
 import java.util.List;
 
 public class HistoryManager {

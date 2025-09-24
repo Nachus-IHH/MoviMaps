@@ -1,64 +1,74 @@
 package com.example.movimaps.adapters;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.movimaps.R;
+import java.util.List;
+
 public class OptimizedRoutesAdapter extends RecyclerView.Adapter<OptimizedRoutesAdapter.RouteViewHolder> {
-    private TabLayout tabLayout;
-    private ViewPager2 viewPager;
-    private DriverPagerAdapter pagerAdapter;
 
+    private List<String> routes;
+    private OnRouteClickListener listener;
+
+    public interface OnRouteClickListener {
+        void onRouteClick(String route, int position);
+    }
+
+    public OptimizedRoutesAdapter(List<String> routes) {
+        this.routes = routes;
+    }
+
+    public void setOnRouteClickListener(OnRouteClickListener listener) {
+        this.listener = listener;
+    }
+
+    @NonNull
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_driver_management);
-
-        initViews();
-        setupToolbar();
-        setupViewPager();
-    }
-
-    private void initViews() {
-        tabLayout = findViewById(R.id.tabLayout);
-        viewPager = findViewById(R.id.viewPager);
-    }
-
-    private void setupToolbar() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Gestión de Choferes");
-    }
-
-    // NUEVO: Configurar ViewPager para choferes
-    private void setupViewPager() {
-        pagerAdapter = new DriverPagerAdapter(this);
-        viewPager.setAdapter(pagerAdapter);
-
-        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
-            switch (position) {
-                case 0:
-                    tab.setText("👨‍💼 Choferes");
-                    break;
-                case 1:
-                    tab.setText("🛣️ Rutas");
-                    break;
-                case 2:
-                    tab.setText("🚏 Paradas");
-                    break;
-            }
-        }).attach();
+    public RouteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_optimized_route, parent, false);
+        return new RouteViewHolder(view);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.driver_menu, menu);
-        return true;
+    public void onBindViewHolder(@NonNull RouteViewHolder holder, int position) {
+        String route = routes.get(position);
+        holder.bind(route, position);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
-            return true;
+    public int getItemCount() {
+        return routes != null ? routes.size() : 0;
+    }
+
+    public void updateRoutes(List<String> newRoutes) {
+        this.routes = newRoutes;
+        notifyDataSetChanged();
+    }
+
+    class RouteViewHolder extends RecyclerView.ViewHolder {
+        private TextView routeNameText;
+        private TextView routeDetailsText;
+
+        public RouteViewHolder(@NonNull View itemView) {
+            super(itemView);
+            routeNameText = itemView.findViewById(R.id.routeNameText);
+            routeDetailsText = itemView.findViewById(R.id.routeDetailsText);
+
+            itemView.setOnClickListener(v -> {
+                if (listener != null && getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    listener.onRouteClick(routes.get(getAdapterPosition()), getAdapterPosition());
+                }
+            });
         }
-        return super.onOptionsItemSelected(item);
+
+        public void bind(String route, int position) {
+            routeNameText.setText("Ruta " + (position + 1));
+            routeDetailsText.setText(route);
+        }
     }
 }

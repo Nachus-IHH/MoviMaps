@@ -15,7 +15,7 @@ import android.widget.EditText;
 import com.example.movimaps.R;
 import com.example.movimaps.sql.entity.Direccion;
 import com.example.movimaps.forms.OnFormStepCompletedListener;
-import com.example.movimaps.osmmap.NativeOsmFragment;
+import com.example.movimaps.fragments.NativeOSMFragment;
 
 public class AddressFormFragment extends Fragment {
 
@@ -60,7 +60,7 @@ public class AddressFormFragment extends Fragment {
 
         if (savedInstanceState == null) {
             getChildFragmentManager().beginTransaction()
-                    .replace(R.id.map_container, new NativeOsmFragment())
+                    .replace(R.id.map_container, new NativeOSMFragment())
                     .commit();
         }
 

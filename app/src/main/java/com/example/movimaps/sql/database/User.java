@@ -23,6 +23,11 @@ public class User {
     private String tipo; // ENUM como String
     private String telefono;
 
+    // Additional fields for profile functionality
+    private String bio;
+    private String profileImagePath;
+    private long updatedAt;
+
     // Constructor
     public User() {}
 
@@ -70,9 +75,36 @@ public class User {
     public String getTelefono() { return telefono; }
     public void setTelefono(String telefono) { this.telefono = telefono; }
 
+    public String getBio() { return bio; }
+    public void setBio(String bio) { this.bio = bio; }
+
+    public String getProfileImagePath() { return profileImagePath; }
+    public void setProfileImagePath(String profileImagePath) { this.profileImagePath = profileImagePath; }
+
+    public long getUpdatedAt() { return updatedAt; }
+    public void setUpdatedAt(long updatedAt) { this.updatedAt = updatedAt; }
+
     // Método helper para nombre completo
     public String getNombreCompleto() {
         return nombre + " " + paterno + " " + materno;
     }
-}
 
+    public int getId() { return idUser; }
+    public String getFullName() { return getNombreCompleto(); }
+    public String getUsername() { return usuario; }
+    public String getEmail() { return correo; }
+    public String getPhone() { return telefono; }
+
+    // Additional setters for compatibility
+    public void setFullName(String fullName) {
+        // Split full name into parts (simplified)
+        String[] parts = fullName.split(" ");
+        if (parts.length >= 1) this.nombre = parts[0];
+        if (parts.length >= 2) this.paterno = parts[1];
+        if (parts.length >= 3) this.materno = parts[2];
+    }
+
+    public void setUsername(String username) { this.usuario = username; }
+    public void setEmail(String email) { this.correo = email; }
+    public void setPhone(String phone) { this.telefono = phone; }
+}

@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.movimaps.R;
-import com.example.movimaps.osmmap.NativeOsmFragment;
+import com.example.movimaps.fragments.NativeOSMFragment;
 
 import org.osmdroid.util.GeoPoint;
 
@@ -26,7 +26,7 @@ public class HomeFragment extends Fragment {
 
         if (savedInstanceState == null) {
             getChildFragmentManager().beginTransaction()
-                    .replace(R.id.map_container, new NativeOsmFragment())
+                    .replace(R.id.map_container, new NativeOSMFragment())
                     .commit();
         }
         return view;
@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        NativeOsmFragment mapFragment = (NativeOsmFragment) getChildFragmentManager().findFragmentById(R.id.map_container);
+        NativeOSMFragment mapFragment = (NativeOSMFragment) getChildFragmentManager().findFragmentById(R.id.map_container);
 
         if (mapFragment != null) {
             GeoPoint myLocation = new GeoPoint(20.09771615, -98.7687703643131 );

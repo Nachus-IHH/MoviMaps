@@ -1,51 +1,40 @@
 package com.example.movimaps.sql.database;
 
-import android.content.Context;
-
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.TypeConverters;
+import android.content.Context;
 
-import com.example.movimaps.sql.converter.DateConverter;
-import com.example.movimaps.sql.dao.DireccionDao;
-import com.example.movimaps.sql.dao.ParadaDao;
-import com.example.movimaps.sql.dao.RegistroTrayectoUsuarioDao;
-import com.example.movimaps.sql.dao.RutaDao;
-import com.example.movimaps.sql.dao.RutaHasParadaDao;
-import com.example.movimaps.sql.dao.UserDao;
-import com.example.movimaps.sql.dao.TransportDao; // 🚀 Importado
-import com.example.movimaps.sql.entity.Direccion;
-import com.example.movimaps.sql.entity.Parada;
-import com.example.movimaps.sql.entity.RegistroTrayectoUsuario;
-import com.example.movimaps.sql.entity.Ruta;
-import com.example.movimaps.sql.entity.RutaHasParada;
-import com.example.movimaps.sql.entity.User;
-
-@Database(entities = {User.class, Ruta.class, Parada.class, RutaHasParada.class, RegistroTrayectoUsuario.class, Direccion.class}, version = 1)
-@TypeConverters({DateConverter.class})   // Aquí se especifican los conversors
+@Database(entities = {
+        User.class,
+        Ruta.class,
+        Parada.class,
+        Transporte.class,
+        ChoferTransporte.class,
+        RutaHasParada.class,    // MODIFICADO: Asegurarse que esté aquí
+        Driver.class,
+        DriverRoute.class,
+        BusStop.class,
+        RouteHistory.class,
+        SearchHistory.class,
+        LocationHistory.class
+}, version = 5, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
-    // DAOs que necesita la app
-    public abstract UserDao userDao();
-    public abstract RutaDao rutaDao();
-    public abstract ParadaDao paradaDao();
-    public abstract RutaHasParadaDao rutaHasParadaDao();
-    public abstract RegistroTrayectoUsuarioDao registroTrayectoUsuarioDao();
-    public abstract DireccionDao direccionDao();
 
-    // 🚀 Nuevo DAO
+    private static AppDatabase INSTANCE;
+
     public abstract TransportDao transportDao();
+    public abstract HistoryDao historyDao();
+    public abstract DriverDao driverDao();
+    public abstract UserDao userDao();
 
-    private static volatile AppDatabase INSTANCE;
-    public static AppDatabase getInstance(Context context) {
+    public static synchronized AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {
-            synchronized (AppDatabase.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                    AppDatabase.class, "db-local-movimaps")
-                            .build();
-                }
-            }
+            INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+                            AppDatabase.class, "transport_database")
+                    .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration()
+                    .build();
         }
         return INSTANCE;
     }

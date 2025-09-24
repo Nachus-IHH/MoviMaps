@@ -5,9 +5,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-import com.example.movimaps.fragments.DriversFragment.java;
+import com.example.movimaps.fragments.DriversFragment;
 import com.example.movimaps.fragments.DriverRoutesFragment;
-import com.example.movimaps.fragments.BusStopsFragment;
 
 public class DriverPagerAdapter extends FragmentStateAdapter {
     // NUEVO: Adaptador para tabs de choferes

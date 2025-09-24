@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.movimaps.R;
 import com.example.movimaps.adapters.DriversAdapter;
-import com.example.movimaps.database.AppDatabase;
-import com.example.movimaps.database.Driver;
+import com.example.movimaps.sql.database.AppDatabase;
+import com.example.movimaps.sql.database.Driver;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 

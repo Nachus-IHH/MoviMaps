@@ -1,4 +1,4 @@
-package com.example.movimaps.sql.database;
+package com.example.movimaps.sql.database;  // Usa solo este paquete
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -19,24 +19,24 @@ public interface UserDao {
     @Delete
     void deleteUser(User user);
 
-    @Query("SELECT * FROM users WHERE id = :userId")
+    @Query("SELECT * FROM User WHERE id_user = :userId")
     User getUserById(int userId);
 
-    @Query("SELECT * FROM users WHERE username = :username")
-    User getUserByUsername(String username);
+    @Query("SELECT * FROM User WHERE usuario = :usuario")
+    User getUserByUsername(String usuario);
 
-    @Query("SELECT * FROM users WHERE email = :email")
+    @Query("SELECT * FROM User WHERE correo = :email")
     User getUserByEmail(String email);
 
-    @Query("SELECT * FROM users WHERE username = :username AND password = :password")
-    User loginUser(String username, String password);
+    @Query("SELECT * FROM User WHERE usuario = :usuario AND password = :password")
+    User loginUser(String usuario, String password);
 
-    @Query("SELECT * FROM users WHERE isActive = 1")
+    @Query("SELECT * FROM User")
     List<User> getAllActiveUsers();
 
-    @Query("SELECT COUNT(*) FROM users WHERE username = :username")
-    int checkUsernameExists(String username);
+    @Query("SELECT COUNT(*) FROM User WHERE usuario = :usuario")
+    int checkUsernameExists(String usuario);
 
-    @Query("SELECT COUNT(*) FROM users WHERE email = :email")
+    @Query("SELECT COUNT(*) FROM User WHERE correo = :email")
     int checkEmailExists(String email);
 }

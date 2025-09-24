@@ -2,6 +2,9 @@ package com.example.movimaps.sql.database;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 @Entity(tableName = "location_history")
 public class LocationHistory {
@@ -16,6 +19,7 @@ public class LocationHistory {
     private int visitCount; // Cuántas veces ha visitado este lugar
     private long totalTimeSpent; // Tiempo total en milisegundos
     private String locationType; // "visited", "searched", "pinned"
+    private boolean favorite = false;
 
     // Constructor
     public LocationHistory() {
@@ -63,4 +67,25 @@ public class LocationHistory {
 
     public String getLocationType() { return locationType; }
     public void setLocationType(String locationType) { this.locationType = locationType; }
+
+    public String getName() {
+        return locationName;
+    }
+
+    public String getAddress() {
+        return String.format(Locale.getDefault(), "%.6f, %.6f", latitude, longitude);
+    }
+
+    public String getFormattedTimestamp() {
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault());
+        return sdf.format(new Date(timestamp));
+    }
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
 }
