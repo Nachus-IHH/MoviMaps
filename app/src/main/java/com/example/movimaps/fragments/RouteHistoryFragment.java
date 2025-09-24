@@ -65,8 +65,9 @@ public class RouteHistoryFragment extends Fragment implements RouteHistoryAdapte
         loadData();
     }
 
+
     @Override
-    public void onRouteClick(RouteHistory route) {
+    public void onRouteClick(com.example.movimaps.sql.entity.RouteHistory route) {
         // Abrir el mapa con la ruta seleccionada
         Intent intent = new Intent(getContext(), MainActivity.class);
         intent.putExtra("action", "show_route");
@@ -80,10 +81,11 @@ public class RouteHistoryFragment extends Fragment implements RouteHistoryAdapte
     }
 
     @Override
-    public void onFavoriteClick(RouteHistory route) {
+    public void onFavoriteClick(com.example.movimaps.sql.entity.RouteHistory route) {
         boolean newFavoriteStatus = !route.isFavorite();
         historyManager.toggleRouteFavorite(route.getId(), newFavoriteStatus);
         route.setFavorite(newFavoriteStatus);
         adapter.notifyDataSetChanged();
     }
+
 }
